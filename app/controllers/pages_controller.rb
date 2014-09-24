@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @categories = Category.all
+    @categories = Category.order('name ASC')
   end
 end

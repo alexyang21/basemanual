@@ -1,13 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyText
-  wistia_id: MyString
-  service_id: 
-
-two:
-  title: MyString
-  description: MyText
-  wistia_id: MyString
-  service_id: 
+  title: "Mixpanel Setup"
+  description: "This is a video for MixPanel"
+  wistia_id: sk3fo15obd
+  service_id: 1
+  transcript: "Coming soon!"
+  notes: "Coming soon!"

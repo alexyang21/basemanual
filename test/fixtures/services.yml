@@ -1,11 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  category_id: 
-  name: MyString
-  description: MyString
-
-two:
-  category_id: 
-  name: MyString
-  description: MyString
+  category_id: 2
+  name: Mixpanel
+  description: "Mixpanel is an analytics service."
