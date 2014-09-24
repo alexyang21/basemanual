@@ -1,0 +1,35 @@
+<%= form_for(@video) do |f| %>
+  <% if @video.errors.any? %>
+    <div id="error-explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h4>
+
+      <ul>
+      <% @video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%#= f.label :service_id %>
+    <%= f.collection_select :service_id, Service.order('name ASC'), :id, :name, { prompt: "Choose a service" },
+        {class: "btn btn-default btn-lg dropdown-toggle"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Wistia Embed ID" %>
+    <%= f.text_field :wistia_id, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

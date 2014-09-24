@@ -1,0 +1,16 @@
+<% @videos.each do |video| %>
+  
+  <h2><%= "#{video.service.name}: #{video.title}" %></h2>
+  <p><%= video.description %></p>
+  
+  <div id="<%= "wistia_#{video.wistia_id}" %>" class="wistia_embed" style="width:640px;height:360px;"></div>
+  <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
+  <script>
+    wistiaEmbed = Wistia.embed("sk3fo15obd");
+  </script>
+  
+<% end %>
+
+<br>
+
+<%= link_to 'New Video', new_video_path %>

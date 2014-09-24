@@ -1,0 +1,31 @@
+<h1>Setup any web app you want</h1>
+<h2>No tech documentation. Easy installation tutorials.</h2>
+
+<br>
+
+<% @categories.each do |category| %>
+  <h2><%= category.name %>    
+    <span class="glyphicon glyphicon-question-sign" data-toggle="popover" data-trigger="focus" tabindex="0" 
+                data-content="<%= category.description %>"></span>
+  </h2>
+  
+  
+  <div class="row">
+    <% Service.where(category_id: category.id).each do |service| %>
+      <div class="col-md-4">
+        <h3>
+          <%= image_tag service.logo.url(:thumb) %>
+        </h3>
+
+        <p><%= service.description %></p>
+        
+        <% if Video.where(service_id: service.id).length > 0 %>
+          <%= link_to "View video guide", videos_path, class: "btn btn-primary" %>
+        <% else %>
+          <%= link_to "No videos...yet", '#', class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  
+<% end %>
