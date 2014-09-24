@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924065828) do
+ActiveRecord::Schema.define(version: 20140924175836) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20140924065828) do
     t.integer  "service_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "transcript"
+    t.text     "notes"
   end
 
   add_index "videos", ["service_id"], name: "index_videos_on_service_id"
